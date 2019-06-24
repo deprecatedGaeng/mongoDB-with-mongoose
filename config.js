@@ -5,5 +5,5 @@ export const confJwt = {
 
 export const confCrypto =  {
     secret : 'gaengsworld',
-    pattern : 'aes-256-cbc'
+    alg : 'aes-256-cbc'
 }

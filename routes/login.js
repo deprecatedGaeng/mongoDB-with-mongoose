@@ -14,6 +14,7 @@ router.post('/',(req,res)=>{
         User.findOne({user_id: user_id}, (err, user) => {
             if(err) throw err;
             const savedPw = user.password;
+            console.log(confCrypto.alg, confCrypto.secret)
             const decipher = crypto.createDecipher(confCrypto.alg, confCrypto.secret);
             let decryption = decipher.update(savedPw, 'base64', 'utf8');
             decryption = decipher.final('utf8');
