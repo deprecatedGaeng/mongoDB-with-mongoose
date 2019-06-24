@@ -23,7 +23,7 @@ app.use('/signup',signupRoute);
 app.use('/login',loginRoute);
 //MONGOOSE
 mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_URI/* { useMongoClient: true }*/)
+mongoose.connect(process.env.MONGO_URI,{ useNewUrlParser: true })
   .then(() => console.log('Successfully connected to mongodb'))
   .catch(e => console.error(e));
 
